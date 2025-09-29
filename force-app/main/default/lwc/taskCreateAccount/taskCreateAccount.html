@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Quick Account Creation">
+
+        
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Account Name" required onchange={capture} value={Name}></lightning-input>
+        </div>
+        
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Phone" onchange={phonecapture} value={PhoneAcc}></lightning-input>
+        </div>
+        
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-combobox name="progress" label="Rating" value={RatingAcc} placeholder="Select" options={ratingOptions} onchange={Ratingcapture} ></lightning-combobox>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Description" onchange={Descriptioncapture} value={DescriptionAcc}></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-combobox name="progress" label="Active" value={ActiveAcc} placeholder="Select" options={ActiveOptions} onchange={Activecapture} ></lightning-combobox>
+        </div>
+        <template if:true={showSpinner}>
+
+            <div class="exampleHolder">
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </div>
+
+
+
+        </template>
+           
+                
+        <lightning-button variant="brand" label="Create" onclick={create}  class="slds-m-left_x-small"></lightning-button>
+
+        
+
+    </lightning-card>
+</template>

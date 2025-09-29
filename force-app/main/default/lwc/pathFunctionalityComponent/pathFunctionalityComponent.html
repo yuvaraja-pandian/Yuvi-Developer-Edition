@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Dynamic Path">
+        <div class="overallContainer">
+            <span><b>RecordID : {recordId}</b></span><br>
+            <span><b>ObjectName : {objectName}</b></span><br>
+
+            <lightning-combobox class="combobox" name="picklistfields" label="select the picklist field you want to update" value={value} placeholder="Select" options={options} onchange={picklistfieldsHandleChange} ></lightning-combobox>
+            
+            <template if:true={refreshPath}>
+                <section style="margin:2% 10%">
+                    <lightning-progress-indicator current-step={currentStep} type="path">
+                        <template for:each={steps} for:item="step">
+                            <lightning-progress-step key={step} label={step} value={step}></lightning-progress-step>
+                        </template>
+                    </lightning-progress-indicator>
+                </section>
+                <Section>
+                    <lightning-record-edit-form object-api-name={objectName} record-id={recordId}>
+                        <lightning-input-field field-name={value} onchange={selectedPiclistValueHandler}> </lightning-input-field>
+                        <div class="slds-var-m-top_medium">
+                            <lightning-button variant="brand" type="submit" label="Save" onclick={saveHandle}></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </Section>
+            </template>
+        </div>
+        
+        
+    </lightning-card>
+</template>

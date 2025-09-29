@@ -1,0 +1,15 @@
+h4{
+  font-style: italic;
+  font-weight: bolder;
+  font-size: medium;
+  text-align-last: center;
+  text-decoration: solid;
+    
+}
+
+.temp{
+  padding-left: 1em;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 3em;
+}

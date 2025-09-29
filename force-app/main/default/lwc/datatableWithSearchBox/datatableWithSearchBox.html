@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <header></header>
+        <nav>
+            <lightning-input placeholder="Search" type="search" onchange={searchHandler}></lightning-input>
+        </nav>
+                       
+        <section>
+            <div style="height: 600px;"><lightning-datatable key-field="id" data={VisibleData} columns={columns}></lightning-datatable></div>
+            <div class="slds-m-around_medium">
+                <p class="slds-m-around_medium">{startingRecord} to {endingRecord} of {totalRecordCount} records</p>
+                <h1 class="slds-m-around_medium">page {currentPage} of {totalPage}</h1>
+            </div>
+        </section>
+
+        <footer class="slds-text-align_center"><lightning-button label="Previous" onclick={previousHandler}><span></span></lightning-button><lightning-button label="Next" onclick={nextHandler}></lightning-button></footer>
+    </lightning-card>
+</template>
